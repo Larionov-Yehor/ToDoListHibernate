@@ -6,30 +6,44 @@ import java.util.Date;
 /**
  * Created by employee on 11/18/16.
  */
+
 @Entity
 @Table (name = "tasks", catalog = "todolist", uniqueConstraints = {
         @UniqueConstraint(columnNames = "task_id")
 })
-public class Task {
-
-    private Integer id;
-    private String name;
-    private String description;
-    private Boolean state = false;
-    private Date date;
-    private Integer listId;
-
-    public Task(){}
-
-    public Task(String name, Date date, Integer listId) {
-        this.name = name;
-        this.date = date;
-        this.listId = listId;
-    }
+public class Task{
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "task_id")
+    private Integer id;
+
+    @Column(name = "task_name")
+    private String name;
+
+    @Column(name = "task_description")
+    private String description;
+
+    @Column(name = "task_state")
+    private Boolean state = false;
+
+    @Temporal(TemporalType.DATE)
+    @Column(name = "task_due_date")
+    private Date dueDate;
+
+    @Column (name = "list_id")
+   // @ManyToOne(fetch = FetchType.LAZY)
+    private Integer listId;
+
+    public Task(){}
+
+    public Task(String name, Date dueDate, Integer listId) {
+        this.name = name;
+        this.dueDate = dueDate;
+        this.listId = listId;
+    }
+
+
     public Integer getId() {
         return id;
     }
@@ -37,7 +51,7 @@ public class Task {
     public void setId(Integer id) {
         this.id = id;
     }
-    @Column(name = "task_name")
+
     public String getName() {
         return name;
     }
@@ -45,7 +59,6 @@ public class Task {
         this.name = name;
     }
 
-    @Column(name = "task_description")
     public String getDescription() {
         return description;
     }
@@ -53,22 +66,18 @@ public class Task {
         this.description = description;
     }
 
-    @Column(name = "task_state")
     public Boolean getState() {    return state;}
     public void setState(Boolean state) {
         this.state = state; }
 
-    @Temporal(TemporalType.DATE)
-    @Column(name = "task_due_date")
-    public Date getDate() {
-        return date;
+    public Date getDueDate() {
+        return dueDate;
     }
-    public void setDate(Date date) {
-        this.date = date;
+    public void setDueDate(Date date) {
+        this.dueDate = date;
     }
 
-    @Column(name = "list_id")
-   // @OneToMany(mappedBy = "list_id", fetch = FetchType.LAZY)
+  // @ManyToOne(fetch = FetchType.LAZY, m)
     public Integer getListId() {
         return listId;
     }

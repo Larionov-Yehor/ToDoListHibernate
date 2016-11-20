@@ -10,9 +10,9 @@ import java.util.List;
 public interface TaskDao {
 
     public void add(Task task);
-    public void delete(Task task);
-    public void changeState(Task task);
-    public List<Task> getAll(int id);
+    public void delete(Integer taskId);
+    public void changeState(Integer taskId);
+    public List<Task> getAll();
 
 
 }
