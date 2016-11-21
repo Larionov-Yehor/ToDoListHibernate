@@ -21,14 +21,10 @@ public class Marker extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
-
         TaskDaoImpl taskDao = new TaskDaoImpl();
         int taskId = Integer.valueOf(req.getParameter("taskId"));
 
-
         taskDao.changeState(taskId);
-
-
         resp.sendRedirect("/home");
 
     }

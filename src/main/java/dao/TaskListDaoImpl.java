@@ -22,24 +22,23 @@ public class TaskListDaoImpl implements TaskListDao{
 
         TaskList taskList = new TaskList();
         taskList.setName(name);
-
         session.save(taskList);
+
         session.getTransaction().commit();
         HibernateUtil.shutdown();
-
     }
 
-    public void delete(Integer listId){
+    public void delete(Integer listId) {
+
         Session session = HibernateUtil.getSessionFactory().openSession();
         session.beginTransaction();
 
-        TaskList taskList = new TaskList();
-        taskList.setId(listId);
+        TaskList taskList = (TaskList) session.createCriteria(TaskList.class).
+                add(Restrictions.eq("id", listId)).uniqueResult();
 
         session.delete(taskList);
         session.getTransaction().commit();
         HibernateUtil.shutdown();
-        session.close();
     }
 
     public List<TaskList> getAll() {
@@ -47,16 +46,18 @@ public class TaskListDaoImpl implements TaskListDao{
         Session session = HibernateUtil.getSessionFactory().openSession();
         Criteria criteria = session.createCriteria(TaskList.class);
         List<TaskList> taskLists = (List<TaskList>) criteria.list();
-        session.close();
+        HibernateUtil.shutdown();
 
         return taskLists;
     }
 
     public TaskList getParticularTaskList(Integer listId){
+
         Session session = HibernateUtil.getSessionFactory().openSession();
         Criteria criteria = session.createCriteria(TaskList.class)
                 .add(Restrictions.eq("id",listId));
         TaskList taskList = (TaskList) criteria.list().get(0);
+        HibernateUtil.shutdown();
 
     return taskList;}
 }

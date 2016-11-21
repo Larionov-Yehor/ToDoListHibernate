@@ -1,6 +1,7 @@
 package dao;
 
 import model.Task;
+import model.TaskList;
 
 import java.util.List;
 
@@ -12,7 +13,7 @@ public interface TaskDao {
     public void add(Task task);
     public void delete(Integer taskId);
     public void changeState(Integer taskId);
-    public List<Task> getAll();
-
+    public void deleteCoupledTasks(Integer listId);
+    public List<Task> getTasksForParticularList(Integer listId);
 
 }

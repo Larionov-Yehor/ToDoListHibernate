@@ -28,12 +28,10 @@ public class TaskListRemover extends HttpServlet {
         Integer taskListId = Integer.valueOf(req.getParameter("taskListId"));
 
         taskDao.deleteCoupledTasks(taskListId);
+
         taskListDao.delete(taskListId);
 
         resp.sendRedirect("/home");
-
-
     }
-
 
 }

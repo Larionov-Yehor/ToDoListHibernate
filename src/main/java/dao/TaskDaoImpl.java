@@ -18,9 +18,10 @@ public class TaskDaoImpl implements TaskDao{
     public void add(Task task) {
         Session session = HibernateUtil.getSessionFactory().openSession();
         session.beginTransaction();
+
         session.save(task);
+
         session.getTransaction().commit();
-       // session.close();
         HibernateUtil.shutdown();
     }
 
@@ -30,16 +31,15 @@ public class TaskDaoImpl implements TaskDao{
 
         Task task = new Task();
         task.setId(taskId);
-
         session.delete(task);
+
         session.getTransaction().commit();
         HibernateUtil.shutdown();
-        session.close();
+
     }
 
     public void deleteCoupledTasks(Integer listId){
 
-       // Session session = HibernateUtil.getSessionFactory().openSession();
         TaskDaoImpl taskDao = new TaskDaoImpl();
         List<Task> tasksToDelete = taskDao.getTasksForParticularList(listId);
         for(int i = 0; i<tasksToDelete.size(); i++){
@@ -48,8 +48,6 @@ public class TaskDaoImpl implements TaskDao{
             taskDao.delete(taskId);
         }
 
-      // HibernateUtil.shutdown();
-
     }
 
     public void changeState(Integer taskId) {
@@ -57,10 +55,8 @@ public class TaskDaoImpl implements TaskDao{
         session.beginTransaction();
         Criteria criteria = session.createCriteria(Task.class)
                 .add(eq("id",taskId));
-       // Task task = (Task)criteria.uniqueResult();
 
-        List<Task> tasks = (List<Task>) criteria.list();
-        Task task = tasks.get(0);
+        Task task = (Task)criteria.uniqueResult();
         task.setState(!task.getState());
 
         session.update(task);
@@ -70,11 +66,6 @@ public class TaskDaoImpl implements TaskDao{
 
     }
 
-    public List<Task> getAll() {
-
-
-        return null;
-    }
 
     public List<Task> getTasksForParticularList(Integer listId){
 
@@ -85,8 +76,18 @@ public class TaskDaoImpl implements TaskDao{
         List<Task> tasks = (List<Task>) criteria.list();
 
         HibernateUtil.shutdown();
-        session.close();
 
-    return tasks;}
+    return tasks;
+    }
+
+    public Task getParticularTask(String taskName){
+        Session session = HibernateUtil.getSessionFactory().openSession();
+        Criteria criteria = session.createCriteria(Task.class)
+                .add(eq("name", taskName));
+
+        Task task = (Task)criteria.uniqueResult();
+
+        return task;
+    }
 
 }

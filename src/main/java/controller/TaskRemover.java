@@ -31,8 +31,6 @@ public class TaskRemover extends HttpServlet {
 
         resp.sendRedirect("/home");
 
-
     }
-
 
 }

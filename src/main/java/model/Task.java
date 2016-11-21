@@ -32,7 +32,6 @@ public class Task{
     private Date dueDate;
 
     @Column (name = "list_id")
-   // @ManyToOne(fetch = FetchType.LAZY)
     private Integer listId;
 
     public Task(){}
@@ -77,11 +76,24 @@ public class Task{
         this.dueDate = date;
     }
 
-  // @ManyToOne(fetch = FetchType.LAZY, m)
     public Integer getListId() {
         return listId;
     }
     public void setListId(Integer listId) {
         this.listId = listId;
     }
+
+    public static Date parseDate(String dateStr){
+
+        Date date = new Date();
+
+        String [] parts = dateStr.split("-");
+        int year = Integer.valueOf(parts[0]);
+        int month = Integer.valueOf(parts[1]);
+        int day = Integer.valueOf(parts[2]);
+
+        date.setYear(year-1900);
+        date.setMonth(month-1);
+        date.setDate(day-1);
+        return date;}
 }

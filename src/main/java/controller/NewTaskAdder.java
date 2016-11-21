@@ -28,27 +28,16 @@ public class NewTaskAdder extends HttpServlet {
         String dateStr = req.getParameter("task_date");
         String taskListId = req.getParameter("task_list");
 
-        Date date = new Date();
-
-        String [] parts = dateStr.split("-");
-        int year = Integer.valueOf(parts[0]);
-        int month = Integer.valueOf(parts[1]);
-        int day = Integer.valueOf(parts[2]);
-
-        date.setYear(year-1900);
-        date.setMonth(month);
-        date.setDate(day);
-
         Task task = new Task();
+
         task.setName(title);
         task.setState(false);
-        task.setDueDate(date);
+        task.setDueDate(Task.parseDate(dateStr));
         task.setDescription(description);
         task.setListId(Integer.valueOf(taskListId));
 
         TaskDaoImpl taskDao =  new TaskDaoImpl();
-
-            taskDao.add(task);
+        taskDao.add(task);
 
         resp.sendRedirect("/home");
 
