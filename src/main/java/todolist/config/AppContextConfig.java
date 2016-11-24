@@ -12,11 +12,13 @@ import org.springframework.web.servlet.view.JstlView;
  */
 @Configuration
 @EnableWebMvc
-@ComponentScan("todolist")
+@ComponentScan("todolist.*")
 public class AppContextConfig {
 
     @Bean
     public InternalResourceViewResolver setupViewResolver(){
+        System.out.println("setupViewResolver");
+
         InternalResourceViewResolver resolver = new InternalResourceViewResolver();
         resolver.setPrefix("/WEB-INF/jsp/");
         resolver.setSuffix(".jsp");

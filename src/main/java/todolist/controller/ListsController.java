@@ -4,6 +4,8 @@ package todolist.controller;
  * Created by employee on 11/23/16.
  */
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.servlet.ModelAndView;
 import todolist.model.TaskList;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
@@ -15,20 +17,24 @@ import java.util.List;
 
 @Controller
 public class ListsController {
+
+    @Autowired
     ListsService listsService;
 
-    @RequestMapping (value ="/", method = RequestMethod.GET)
+       @RequestMapping (value ="/")
+       public ModelAndView index(){
 
-    public void index(ModelMap modelMap){
+       System.out.println("index()");
+       return new ModelAndView("redirect:/home");
+       }
+
+    @RequestMapping (value ="/home", method = RequestMethod.GET)
+    public ModelMap getAll(){
+
         List<TaskList> taskLists = listsService.getAll();
-        modelMap.put("taskLists", taskLists);
+        System.out.println("controller");
+        return new ModelMap("taskLists", taskLists);
     }
-
-    @RequestMapping (value = "/tasklist_page")
-    public String add(){
-        return "new_tasklist";
-    }
-
 
 }
 

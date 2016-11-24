@@ -42,6 +42,7 @@ public class HibernateConfiguration {
     }
 
     private Properties hibernateProperties() {
+        System.out.println("hibernateProps");
         Properties properties = new Properties();
         properties.put("hibernate.dialect", environment.getRequiredProperty("hibernate.dialect"));
         properties.put("hibernate.show_sql", environment.getRequiredProperty("hibernate.show_sql"));
@@ -51,9 +52,11 @@ public class HibernateConfiguration {
 
     @Bean
     public LocalSessionFactoryBean sessionFactory() {
+        System.out.println("SF");
         final LocalSessionFactoryBean sessionFactory = new LocalSessionFactoryBean();
         sessionFactory.setDataSource(dataSource());
-        sessionFactory.setPackagesToScan("todolist/model");
+        sessionFactory.setPackagesToScan(new String[] { "todolist.model" });
+
         sessionFactory.setHibernateProperties(hibernateProperties());
         return sessionFactory;
     }
@@ -61,6 +64,7 @@ public class HibernateConfiguration {
     @Bean
     @Autowired
     public HibernateTransactionManager transactionManager(SessionFactory sessionFactory) {
+        System.out.println("TM");
         HibernateTransactionManager transactionManager = new HibernateTransactionManager();
         transactionManager.setSessionFactory(sessionFactory);
         return transactionManager;
@@ -68,6 +72,7 @@ public class HibernateConfiguration {
 
     @Bean
     public DataSource dataSource() {
+        System.out.println("DS");
         DriverManagerDataSource dataSource = new DriverManagerDataSource(dataBaseUrl, dataBaseUser, dataBasePass);
         dataSource.setDriverClassName("com.mysql.jdbc.Driver");
         return dataSource;
