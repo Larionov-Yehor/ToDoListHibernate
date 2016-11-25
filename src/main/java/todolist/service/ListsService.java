@@ -11,4 +11,5 @@ public interface ListsService {
     public List<TaskList> getAll();
     public void add(TaskList taskList);
     public void delete(String listId);
+    public TaskList getParticularTaskList(String listId);
 }

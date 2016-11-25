@@ -11,16 +11,16 @@
 
 <br>
 
-Tasklist: &nbsp  ${tasklist.getName()}
+Tasklist: &nbsp  ${taskList.getName()}
 <br>
 <br>
-Tasks to do:
+Tasks :
 <br>
-<c:forEach items="${toDoTasks}" var="item">
+<c:forEach items="${taskListForPage}" var="item">
 
     &nbsp <label style="color: brown"> ${item.getName()} </label> &nbsp ${item.getDueDate()}
 
-    <a href="/taskRemover?taskId=${item.getId()}"> <input type="submit" value="remove"> </a> &nbsp
+    <a href="/taskDelete?taskId=${item.getId()}"> <input type="submit" value="remove"> </a> &nbsp
     <a href="/marker?taskId=${item.getId()}"> <input type="submit" value="mark as done"> </a>
     <br>
     &nbsp ${item.getDescription()}
@@ -28,23 +28,7 @@ Tasks to do:
     <br>
 
 </c:forEach>
-<br>
-<br>
-Completed tasks:
-<br>
-<c:forEach items="${completedTasks}" var="item">
 
-    &nbsp <label style="color: green"> ${item.getName()} </label> &nbsp
-    <a href="/taskRemover?taskId=${item.getId()}"> <input type="submit" value="remove"> </a> &nbsp
-    <a href="/marker?taskId=${item.getId()}"> <input type="submit" value="mark as undone"> </a>
-    <br>
-    &nbsp ${item.getDescription()}
-    <br>
-    <br>
-
-</c:forEach>
-<br>
-<br>
 
 <a href="/listRemover?taskListId=${tasklist.getId()}"> <input type="submit" value="Remove list ${tasklist.getName()}"> </a>
 
