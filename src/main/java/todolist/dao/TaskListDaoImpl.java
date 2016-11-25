@@ -8,21 +8,29 @@ import org.springframework.stereotype.Repository;
 
 
 import java.util.List;
-
 /**
  * Created by employee on 11/24/16.
  */
-@Repository("taskList")
+@Repository
 public class TaskListDaoImpl implements TaskListDao {
+
     @Autowired
     private SessionFactory sessionFactory;
 
     @Override
     public List<TaskList> getAll() {
-
         Criteria criteria = sessionFactory.getCurrentSession().createCriteria(TaskList.class);
-        System.out.println("dao");
         return  (List<TaskList>) criteria.list();
+    }
+
+    @Override
+    public void add(TaskList taskList){
+        sessionFactory.getCurrentSession().save(taskList);
+    }
+
+    @Override
+    public void delete(TaskList taskList) {
+        sessionFactory.getCurrentSession().delete(taskList);
     }
 
 

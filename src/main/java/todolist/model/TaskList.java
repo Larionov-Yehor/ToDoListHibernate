@@ -12,13 +12,13 @@ import java.util.List;
 public class TaskList {
     @Id
     @Column(name = "list_id")
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
     @Column(name = "tasklist_name")
     private String name;
 
-    @OneToMany(fetch = FetchType.LAZY)
+    @OneToMany(fetch = FetchType.LAZY, mappedBy = "listOfTasks")
     private List<Task> coupledTasks;
 
     public Integer getId() {

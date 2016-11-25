@@ -9,4 +9,6 @@ import java.util.List;
  */
 public interface TaskListDao {
     List<TaskList> getAll();
+    public void add(TaskList taskList);
+    public void delete(TaskList taskList);
 }
