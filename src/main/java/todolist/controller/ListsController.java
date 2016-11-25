@@ -16,81 +16,79 @@ import todolist.service.ListsService;
 import todolist.service.ListsServiceImpl;
 import todolist.service.TasksService;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @Controller
 public class ListsController {
 
- @Autowired
- private ListsService listsService;
+    @Autowired
+    private ListsService listsService;
+    @Autowired
+    private TasksService tasksService;
 
 
-       @RequestMapping (value ="/")
-       public String index(){
+    @RequestMapping(value = "/")
+    public String index() {
 
-       return "redirect:/home";
-       }
-
-
-       @RequestMapping (value ="/home", method = RequestMethod.GET)
-       public ModelMap getAll(){
-            List<TaskList> taskLists = listsService.getAll();
-            ModelMap modelMap = new ModelMap();
-            modelMap.addAttribute("taskLists", taskLists);
-
-       return modelMap;
-       }
+        return "redirect:/home";
+    }
 
 
+    @RequestMapping(value = "/home", method = RequestMethod.GET)
+    public ModelMap getAll() {
+        List<TaskList> taskLists = listsService.getAll();
+        ModelMap modelMap = new ModelMap();
+        modelMap.addAttribute("taskLists", taskLists);
 
-       @RequestMapping (value = "/tasklist_page")
-       public String tasklistPage(@RequestParam("taskListId") String listId,
-                                  ModelMap modelMap){
-
-       TaskList taskList = listsService.getParticularTaskList(listId);
-       List<Task> taskListForPage = taskList.getCoupledTasks();
-
-       modelMap.addAttribute("taskList",taskList);
-       modelMap.addAttribute("taskListForPage", taskListForPage);
-
-       return "tasklist_page";
-       }
+        return modelMap;
+    }
 
 
-      @RequestMapping (value = "/new_tasklist")
-      public String addPage(){
-            return "new_tasklist";
-      }
+    @RequestMapping(value = "/tasklist_page")
+    public String tasklistPage(@RequestParam("taskListId") String listId,
+                               ModelMap modelMap) {
+
+        TaskList taskList = listsService.getParticularTaskList(listId);
+        // List<Task> coupledTasks = taskList.getCoupledTasks();
+        List<Task> done = tasksService.getDone(listId);
+        List<Task> undone = tasksService.getUndone(listId);
 
 
-      @RequestMapping (value = "/add_new_tasklist", method = RequestMethod.POST)
-      public String add(@RequestParam("tasklist_name") String taskListName){
+        modelMap.addAttribute("taskList", taskList);
 
-             TaskList taskList = new TaskList();
-             taskList.setName(taskListName);
+        modelMap.addAttribute("done", done);
+        modelMap.addAttribute("undone", undone);
 
-             listsService.add(taskList);
-
-       return "redirect:/home";
-       }
+        return "tasklist_page";
+    }
 
 
-       @RequestMapping (value = "/deleteList", method = RequestMethod.POST)
-       public String delete(@RequestParam("listId") String listId){
-
-            listsService.delete(listId);
-
-       return "redirect:/home";
-       }
+    @RequestMapping(value = "/new_tasklist")
+    public String addPage() {
+        return "new_tasklist";
+    }
 
 
+    @RequestMapping(value = "/add_new_tasklist", method = RequestMethod.POST)
+    public String add(@RequestParam("tasklist_name") String taskListName) {
+
+        TaskList taskList = new TaskList();
+        taskList.setName(taskListName);
+
+        listsService.add(taskList);
+
+        return "redirect:/home";
+    }
 
 
+    @RequestMapping(value = "/deleteList", method = RequestMethod.POST)
+    public String delete(@RequestParam("listId") String listId) {
 
+        listsService.delete(listId);
 
-
-
-
+        return "redirect:/home";
+    }
 
 
 }

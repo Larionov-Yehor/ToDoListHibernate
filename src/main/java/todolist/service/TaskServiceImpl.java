@@ -8,6 +8,7 @@ import todolist.model.Task;
 import todolist.model.TaskList;
 
 import java.util.List;
+import java.util.stream.Collectors;
 
 /**
  * Created by employee on 11/25/16.
@@ -37,6 +38,48 @@ public class TaskServiceImpl implements TasksService{
     @Override
     public void delete(String taskId) {
 
+        Task task =  getParticularTask(taskId);
+
+        taskDao.delete(task);
+    }
+
+    @Override
+    public void changeState(String taskId) {
+
+        Integer neededTaskId = Integer.valueOf(taskId);
+        Task task =  getParticularTask(taskId);
+        task.setState(!task.getState());
+        taskDao.changeState(task);
+
+
+    }
+
+    @Override
+    public List<Task> getDone(String listId) {
+        List<Task> undone = getTasksByState(listId, true);
+        return undone;
+    }
+
+    @Override
+    public List<Task> getUndone(String listId) {
+        List<Task> undone = getTasksByState(listId, false);
+        return undone;
+    }
+
+    public List<Task> getTasksByState(String listId, boolean state){
+        List<Task> taskList =getAll()
+                .stream()
+                .filter(task -> task.getListId().equals(Integer.valueOf(listId))
+                        &&
+                        task.getState().equals(state))
+                .collect(Collectors.toList());
+
+        return taskList;
+    }
+
+
+
+    public Task getParticularTask(String taskId){
         Integer neededTaskId = Integer.valueOf(taskId);
 
         Task task =  getAll()
@@ -45,7 +88,5 @@ public class TaskServiceImpl implements TasksService{
                 .findFirst()
                 .get();
 
-        taskDao.delete(task);
-
-    }
+        return task;}
 }

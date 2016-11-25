@@ -13,6 +13,9 @@ public interface TasksService {
     public List<Task> getAll();
     public void add(Task task);
     public void delete(String taskId);
+    public void changeState(String taskId);
+    public List<Task> getDone(String listId);
+    public List<Task> getUndone(String listId);
 
 
 }

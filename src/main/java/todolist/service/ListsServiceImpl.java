@@ -46,7 +46,6 @@ public class ListsServiceImpl implements ListsService {
                             .findFirst()
                             .get();
 
-
         taskList.setCoupledTasks(
         taskDao.getAll()
                 .stream()

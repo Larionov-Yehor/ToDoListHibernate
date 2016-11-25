@@ -61,5 +61,12 @@ public class TasksController{
     return "redirect:/home";
     }
 
+    @RequestMapping(value = "/taskMarker")
+    public String changeTaskStatus(@RequestParam("taskId")String taskId){
+
+    tasksService.changeState(taskId);
+    return "redirect:/home";
+    }
+
 
 }

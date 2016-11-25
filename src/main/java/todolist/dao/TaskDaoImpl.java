@@ -33,5 +33,10 @@ public class TaskDaoImpl implements TaskDao {
         sessionFactory.getCurrentSession().delete(task);
     }
 
+    @Override
+    public void changeState(Task task) {
+        sessionFactory.getCurrentSession().update(task);
+    }
+
 
 }
