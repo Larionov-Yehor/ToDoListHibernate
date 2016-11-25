@@ -3,17 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="fb0a2174-289a-4263-a7bb-fec0cbd5fea1" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pom.xml" afterPath="$PROJECT_DIR$/pom.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/todolist/controller/ListsController.java" afterPath="$PROJECT_DIR$/src/main/java/todolist/controller/ListsController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/todolist/controller/TasksController.java" afterPath="$PROJECT_DIR$/src/main/java/todolist/controller/TasksController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/todolist/dao/TaskDao.java" afterPath="$PROJECT_DIR$/src/main/java/todolist/dao/TaskDao.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/todolist/dao/TaskDaoImpl.java" afterPath="$PROJECT_DIR$/src/main/java/todolist/dao/TaskDaoImpl.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/todolist/dao/TaskListDaoImpl.java" afterPath="$PROJECT_DIR$/src/main/java/todolist/dao/TaskListDaoImpl.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/todolist/service/ListsServiceImpl.java" afterPath="$PROJECT_DIR$/src/main/java/todolist/service/ListsServiceImpl.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/todolist/service/TaskServiceImpl.java" afterPath="$PROJECT_DIR$/src/main/java/todolist/service/TaskServiceImpl.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/todolist/service/TasksService.java" afterPath="$PROJECT_DIR$/src/main/java/todolist/service/TasksService.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/home.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/home.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/tasklist_page.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/tasklist_page.jsp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/todolist/config/WebMvcConfig.java" afterPath="$PROJECT_DIR$/src/main/java/todolist/config/WebMvcConfig.java" />
     </list>
     <ignored path=".idea/dataSources.local.xml" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -93,48 +83,55 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="home.jsp" pinned="false" current-in-tab="true">
+      <file leaf-file-name="home.jsp" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/home.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="468">
-              <caret line="26" column="7" selection-start-line="26" selection-start-column="7" selection-end-line="26" selection-end-column="7" />
+            <state relative-caret-position="0">
+              <caret line="0" column="64" selection-start-line="0" selection-start-column="64" selection-end-line="26" selection-end-column="7" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="TaskDao.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/todolist/dao/TaskDao.java">
+      <file leaf-file-name="WebMvcConfig.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/todolist/config/WebMvcConfig.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="270">
-              <caret line="15" column="0" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
+            <state relative-caret-position="324">
+              <caret line="22" column="92" selection-start-line="22" selection-start-column="92" selection-end-line="22" selection-end-column="92" />
               <folding>
-                <element signature="imports" expanded="true" />
+                <element signature="e#747#748#0" expanded="true" />
+                <element signature="e#782#783#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="TasksController.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/todolist/controller/TasksController.java">
+      <file leaf-file-name="Initializer.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/todolist/config/Initializer.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-1">
-              <caret line="32" column="45" selection-start-line="32" selection-start-column="45" selection-end-line="32" selection-end-column="45" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
+            <state relative-caret-position="288">
+              <caret line="23" column="0" selection-start-line="23" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
+              <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="TaskServiceImpl.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/todolist/service/TaskServiceImpl.java">
+      <file leaf-file-name="HibernateConfiguration.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/todolist/config/HibernateConfiguration.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="197">
-              <caret line="64" column="59" selection-start-line="64" selection-start-column="59" selection-end-line="64" selection-end-column="59" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
+            <state relative-caret-position="774">
+              <caret line="58" column="0" selection-start-line="58" selection-start-column="0" selection-end-line="58" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="AppContextConfig.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/todolist/config/AppContextConfig.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="234">
+              <caret line="18" column="60" selection-start-line="18" selection-start-column="60" selection-end-line="18" selection-end-column="60" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -179,7 +176,6 @@
         <option value="$PROJECT_DIR$/src/main/java/config/HibernateConfiguration.java" />
         <option value="$PROJECT_DIR$/src/main/java/config/AppContextConfig.java" />
         <option value="$PROJECT_DIR$/src/main/java/todolist/AppContextConfig.java" />
-        <option value="$PROJECT_DIR$/src/main/java/todolist/config/WebMvcConfig.java" />
         <option value="$PROJECT_DIR$/src/main/java/todolist/config/AppContextConfig.java" />
         <option value="$PROJECT_DIR$/src/main/java/todolist/config/HibernateConfiguration.java" />
         <option value="$APPLICATION_CONFIG_DIR$/consoles/db/c624b45a-a93d-44cc-a087-2d9c041bc377/console.sql" />
@@ -203,6 +199,7 @@
         <option value="$PROJECT_DIR$/pom.xml" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/tasklist_page.jsp" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/home.jsp" />
+        <option value="$PROJECT_DIR$/src/main/java/todolist/config/WebMvcConfig.java" />
       </list>
     </option>
   </component>
@@ -525,6 +522,10 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="todolist" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="config" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -1116,7 +1117,7 @@
       <workItem from="1479909035997" duration="4329000" />
       <workItem from="1479968841898" duration="28186000" />
       <workItem from="1480057367290" duration="14623000" />
-      <workItem from="1480073477512" duration="11300000" />
+      <workItem from="1480073477512" duration="12074000" />
     </task>
     <task id="LOCAL-00001" summary="changed packages location, deleted old servlets, changed Initializer and Hibernate configuration classes classes">
       <created>1479982660900</created>
@@ -1146,11 +1147,18 @@
       <option name="project" value="LOCAL" />
       <updated>1480081713076</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="added &quot;change Task status&quot; function">
+      <created>1480085306394</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1480085306394</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="63088000" />
+    <option name="totallyTimeSpent" value="63862000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="65" y="24" width="1335" height="1026" extended-state="6" />
@@ -1241,7 +1249,8 @@
     <MESSAGE value="Added getAll methods for Tasklists. Homepage shows all the Tasklists from the base" />
     <MESSAGE value="developed &quot;Add List&quot; function, &quot;Delete List &quot; function, Used Stream API" />
     <MESSAGE value="developed &quot;AddTask&quot; function, &quot;Delete Task &quot; function" />
-    <option name="LAST_COMMIT_MESSAGE" value="developed &quot;AddTask&quot; function, &quot;Delete Task &quot; function" />
+    <MESSAGE value="added &quot;change Task status&quot; function" />
+    <option name="LAST_COMMIT_MESSAGE" value="added &quot;change Task status&quot; function" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1369,25 +1378,7 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/util/HibernateUtil.java" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/todolist/config/Initializer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="288">
-          <caret line="23" column="0" selection-start-line="23" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/target/tasks-1.0-SNAPSHOT/index.jsp" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/todolist/config/HibernateConfiguration.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="774">
-          <caret line="58" column="0" selection-start-line="58" selection-start-column="0" selection-end-line="58" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/c624b45a-a93d-44cc-a087-2d9c041bc377/console.sql">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -1395,28 +1386,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/todolist/config/WebMvcConfig.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="21" column="25" selection-start-line="21" selection-start-column="25" selection-end-line="21" selection-end-column="25" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/target/tasks-1.0-SNAPSHOT/WEB-INF/jsp/home.jsp">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/todolist/config/AppContextConfig.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="234">
-          <caret line="18" column="60" selection-start-line="18" selection-start-column="60" selection-end-line="18" selection-end-column="60" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1492,7 +1465,7 @@
         <state relative-caret-position="467">
           <caret line="35" column="4" selection-start-line="35" selection-start-column="4" selection-end-line="35" selection-end-column="4" />
           <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="imports" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1502,11 +1475,11 @@
         <state relative-caret-position="467">
           <caret line="38" column="5" selection-start-line="38" selection-start-column="5" selection-end-line="38" selection-end-column="5" />
           <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#754#755#0" expanded="true" />
-            <element signature="e#817#818#0" expanded="true" />
-            <element signature="e#873#874#0" expanded="true" />
-            <element signature="e#936#937#0" expanded="true" />
+            <element signature="imports" expanded="false" />
+            <element signature="e#754#755#0" expanded="false" />
+            <element signature="e#817#818#0" expanded="false" />
+            <element signature="e#873#874#0" expanded="false" />
+            <element signature="e#936#937#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1516,9 +1489,8 @@
         <state relative-caret-position="579">
           <caret line="51" column="54" selection-start-line="51" selection-start-column="54" selection-end-line="51" selection-end-column="54" />
           <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#731#732#0" expanded="true" />
-            <element signature="e#774#775#0" expanded="true" />
+            <element signature="e#731#732#0" expanded="false" />
+            <element signature="e#774#775#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1605,9 +1577,44 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/home.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="468">
-          <caret line="26" column="7" selection-start-line="26" selection-start-column="7" selection-end-line="26" selection-end-column="7" />
+        <state relative-caret-position="0">
+          <caret line="0" column="64" selection-start-line="0" selection-start-column="64" selection-end-line="26" selection-end-column="7" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/todolist/config/Initializer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="288">
+          <caret line="23" column="0" selection-start-line="23" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/todolist/config/HibernateConfiguration.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="774">
+          <caret line="58" column="0" selection-start-line="58" selection-start-column="0" selection-end-line="58" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/todolist/config/AppContextConfig.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="234">
+          <caret line="18" column="60" selection-start-line="18" selection-start-column="60" selection-end-line="18" selection-end-column="60" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/todolist/config/WebMvcConfig.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="324">
+          <caret line="22" column="92" selection-start-line="22" selection-start-column="92" selection-end-line="22" selection-end-column="92" />
+          <folding>
+            <element signature="e#747#748#0" expanded="true" />
+            <element signature="e#782#783#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
