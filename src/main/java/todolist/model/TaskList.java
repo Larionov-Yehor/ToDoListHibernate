@@ -15,7 +15,7 @@ public class TaskList {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
-    @Column(name = "tasklist_name")
+    @Column(name = "list_name")
     private String name;
 
     @OneToMany(fetch = FetchType.LAZY, mappedBy = "listOfTasks")

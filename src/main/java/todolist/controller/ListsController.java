@@ -50,13 +50,11 @@ public class ListsController {
                                ModelMap modelMap) {
 
         TaskList taskList = listsService.getParticularTaskList(listId);
-        // List<Task> coupledTasks = taskList.getCoupledTasks();
         List<Task> done = tasksService.getDone(listId);
         List<Task> undone = tasksService.getUndone(listId);
 
 
         modelMap.addAttribute("taskList", taskList);
-
         modelMap.addAttribute("done", done);
         modelMap.addAttribute("undone", undone);
 

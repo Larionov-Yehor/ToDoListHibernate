@@ -12,6 +12,7 @@ public interface TaskDao {
     public void add(Task task);
     public List<Task> getAll();
     public void delete(Task task);
-    public void changeState(Task task);
+    public void update(Task task);
+
 
 }

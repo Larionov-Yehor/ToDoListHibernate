@@ -28,10 +28,13 @@ public class TasksController{
     private ListsService listsService;
 
     @RequestMapping(value = "/new_task")
-    public String addPage(ModelMap modelMap){
-        List<TaskList> taskLists = listsService.getAll();
-        modelMap.addAttribute("taskLists", taskLists);
-        return "new_task";
+    public String addPage(ModelMap modelMap,
+                          @RequestParam("listId") String listId){
+
+       TaskList taskList = listsService.getParticularTaskList(listId);
+       modelMap.addAttribute("taskList", taskList);
+
+       return "new_task";
     }
 
 
@@ -39,7 +42,7 @@ public class TasksController{
     public String add(@RequestParam("task_name") String taskName,
                       @RequestParam("task_description") String taskDescription,
                       @RequestParam("task_date") String date,
-                      @RequestParam("task_list") String taskListId){
+                      @RequestParam("listId") String taskListId){
 
         Task task = new Task();
         task.setName(taskName);
@@ -51,22 +54,53 @@ public class TasksController{
         tasksService.add(task);
 
         return "redirect:/home";
-
     }
 
     @RequestMapping(value = "/taskDelete")
     public String delete(@RequestParam("taskId") String taskId){
-
     tasksService.delete(taskId);
     return "redirect:/home";
     }
 
     @RequestMapping(value = "/taskMarker")
     public String changeTaskStatus(@RequestParam("taskId")String taskId){
-
     tasksService.changeState(taskId);
     return "redirect:/home";
     }
+
+    @RequestMapping(value = "/edit_task")
+    public String editTask(@RequestParam("taskId")String taskId, ModelMap modelMap){
+
+        Task task = tasksService.getParticularTask(taskId);
+        List<TaskList> taskLists = listsService.getAll();
+
+        modelMap.addAttribute("taskLists", taskLists);
+        modelMap.addAttribute("task", task);
+
+    return "edit_task";
+    }
+
+    @RequestMapping(value = "/save_edited_task")
+    public String save(
+                      @RequestParam("task_id") String taskId,
+                      @RequestParam("task_name") String taskName,
+                      @RequestParam("task_description") String taskDescription,
+                      @RequestParam("task_date") String date,
+                      @RequestParam("task_list") String taskListId
+    ){
+
+       Task task = tasksService.getParticularTask(taskId);
+        task.setName(taskName);
+        task.setDescription(taskDescription);
+        task.setDueDate(Task.parseDate(date));
+        task.setState(false);
+        task.setListId(Integer.valueOf(taskListId));
+
+        tasksService.update(task);
+
+        return "redirect:/home";
+    }
+
 
 
 }

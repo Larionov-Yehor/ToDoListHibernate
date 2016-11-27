@@ -2,26 +2,51 @@
 <html>
 
 <head>
-
+    <link rel="stylesheet" href="/resources/css/style.css">
 </head>
 
     <body>
-    <input type="submit" value="Add taskList" onclick="window.location='/new_tasklist'">&nbsp&nbsp
-    <input type="submit" value="Add task" onclick="window.location='/new_task'">
+    <table>
 
-    <br>
-    Tasklists:
-    <br>
-    <c:forEach items="${taskLists}" var="item">
-        &nbsp ${item.getName()}&nbsp<a href="/tasklist_page?taskListId=${item.getId()}">view tasks</a>
+        <tr class="headerLists">
+            <td>
+                <h1> Tasklists:</h1>
+            </td>
+            <td>
+            </td>
+            <td>
+                <button class="newListButton" type="submit" onclick="window.location='/new_tasklist'">+</button>
+            </td>
+        </tr>
 
+        <c:forEach items="${taskLists}" var="item">
+             <tr>
+                    <td>
+                        <a href="/tasklist_page?taskListId=${item.getId()}">  <h2> ${item.getName()}</h2></a>
+                    </td>
+                    <td>
+                        <%--<a href="/tasklist_page?taskListId=${item.getId()}">  <h2> ${item.getName()}</h2></a>--%>
+                    </td>
 
-        <form action="/deleteList" method="post">
-            <button type="submit" name="listId" value="${item.getId()}">delete</button>
-            <br>
-        </form>
+                        <form action="/deleteList" method="post">
+                             <td>
+                            <button class="deleteButton" type="submit" name="listId" value="${item.getId()}">-</button>
+                             </td>
+                        </form>
 
-    </c:forEach>
+             </tr>
+        </c:forEach>
+        <tr>
+                <td>
+                </td>
+                <td>
 
+                </td>
+                <td>
+
+                </td>
+        </tr>
+
+    </table>
     </body>
 </html>

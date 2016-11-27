@@ -7,7 +7,7 @@
 <a href="/home"> <input type="submit" value="back"> </a>
 
 <form action="/add_new_task">
-
+    <input type="hidden" name="listId" value="${taskList.getId()}">
     <input type="text" name="task_name" placeholder="enter title" required>
     <br>
     <textarea name ="task_description" rows="10" cols="50"></textarea>
@@ -16,13 +16,13 @@
     <br>
 
 
-    <select name="task_list">
+    <%--<select name="task_list">
         <c:forEach items="${taskLists}" var="item">
 
             <option value="${item.getId()}"> ${item.getName()} </option>
 
         </c:forEach>
-    </select>
+    </select>--%>
 
     <input type="submit" value="Add Task">
     <br>

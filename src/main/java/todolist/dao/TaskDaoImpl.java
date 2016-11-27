@@ -34,9 +34,14 @@ public class TaskDaoImpl implements TaskDao {
     }
 
     @Override
-    public void changeState(Task task) {
+    public void update(Task task) {
         sessionFactory.getCurrentSession().update(task);
     }
+
+   /* @Override
+    public void update(Task task) {
+
+    }*/
 
 
 }

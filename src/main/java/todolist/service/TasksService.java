@@ -16,6 +16,7 @@ public interface TasksService {
     public void changeState(String taskId);
     public List<Task> getDone(String listId);
     public List<Task> getUndone(String listId);
-
+    public Task getParticularTask(String taskId);
+    public void update(Task task);
 
 }

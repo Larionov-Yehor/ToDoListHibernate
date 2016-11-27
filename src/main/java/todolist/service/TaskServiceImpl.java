@@ -29,11 +29,8 @@ public class TaskServiceImpl implements TasksService{
 
     @Override
     public List<Task> getAll() {
-
         return taskDao.getAll();
     }
-
-
 
     @Override
     public void delete(String taskId) {
@@ -49,9 +46,7 @@ public class TaskServiceImpl implements TasksService{
         Integer neededTaskId = Integer.valueOf(taskId);
         Task task =  getParticularTask(taskId);
         task.setState(!task.getState());
-        taskDao.changeState(task);
-
-
+        taskDao.update(task);
     }
 
     @Override
@@ -68,25 +63,31 @@ public class TaskServiceImpl implements TasksService{
 
     public List<Task> getTasksByState(String listId, boolean state){
         List<Task> taskList =getAll()
-                .stream()
-                .filter(task -> task.getListId().equals(Integer.valueOf(listId))
-                        &&
-                        task.getState().equals(state))
-                .collect(Collectors.toList());
+                            .stream()
+                            .filter(task -> task.getListId().equals(Integer.valueOf(listId))
+                                    &&
+                                    task.getState().equals(state))
+                            .collect(Collectors.toList());
 
         return taskList;
     }
-
 
 
     public Task getParticularTask(String taskId){
         Integer neededTaskId = Integer.valueOf(taskId);
 
         Task task =  getAll()
-                .stream()
-                .filter(neededTaskList -> neededTaskList.getId().equals(neededTaskId))
-                .findFirst()
-                .get();
+                    .stream()
+                    .filter(neededTaskList -> neededTaskList.getId().equals(neededTaskId))
+                    .findFirst()
+                    .get();
 
-        return task;}
+        return task;
+    }
+
+    @Override
+    public void update(Task task) {
+
+        taskDao.update(task);
+    }
 }

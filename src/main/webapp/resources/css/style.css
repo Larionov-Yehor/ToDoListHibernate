@@ -1,0 +1,50 @@
+
+a:link{
+    text-decoration: none;
+}
+
+h1{
+    horiz-align: center;
+    vertical-align: center;
+    color: white;
+    font-size: 20px;
+    font-weight: normal;
+}
+h2{
+    horiz-align: center;
+    vertical-align: center;
+    color: #1a6384;
+    font-size: 16px;
+}
+
+tr,td,th{
+    width: 30%;
+    border: transparent;
+
+}
+table{
+
+    border-bottom-color: #1a6384;
+    border-left-color: #1a6384;
+    border-right-color:  #1a6384;
+}
+
+.headerLists{
+    background-color: #1a6384;
+}
+.deleteButton {
+    background-color:transparent;
+    color: #512b2b;
+    border-color: transparent;
+    border-radius: 4px;
+    font-weight: bold;
+    font-size: 20px;
+}
+.newListButton {
+    background-color:transparent;
+    color: white;
+    border-color:transparent;
+    border-radius: 4px;
+    font-weight: bold;
+    font-size: 24px;
+}
