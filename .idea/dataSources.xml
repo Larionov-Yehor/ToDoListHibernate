@@ -53,5 +53,11 @@
         <property name="yearIsDateType" value="false" />
       </driver-properties>
     </data-source>
+    <data-source source="LOCAL" name="PostgreSQL - todolist@localhost" uuid="77e21d6a-7ca6-4213-92d1-6bb5db2efc9e">
+      <driver-ref>postgresql</driver-ref>
+      <synchronize>true</synchronize>
+      <jdbc-driver>org.postgresql.Driver</jdbc-driver>
+      <jdbc-url>jdbc:postgresql://localhost:5432/todolist</jdbc-url>
+    </data-source>
   </component>
 </project>

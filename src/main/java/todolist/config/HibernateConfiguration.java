@@ -13,8 +13,10 @@ import org.springframework.jdbc.datasource.DriverManagerDataSource;
 import org.springframework.orm.hibernate5.HibernateTransactionManager;
 import org.springframework.orm.hibernate5.LocalSessionFactoryBean;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
+import todolist.props.AppProperties;
 
 import javax.sql.DataSource;
+import java.net.URISyntaxException;
 import java.util.Properties;
 
 @Configuration
@@ -24,6 +26,9 @@ import java.util.Properties;
 
 public class HibernateConfiguration {
 
+   /* @Value("${db.driverClassName}")
+    String driver;
+
     @Value("${db.url}")
     String dataBaseUrl;
 
@@ -31,7 +36,7 @@ public class HibernateConfiguration {
     String dataBaseUser;
 
     @Value("${db.password}")
-    String dataBasePass;
+    String dataBasePass;*/
 
     @Autowired
     private Environment environment;
@@ -41,40 +46,52 @@ public class HibernateConfiguration {
         return new PropertySourcesPlaceholderConfigurer();
     }
 
-    private Properties hibernateProperties() {
-        System.out.println("hibernateProps");
-        Properties properties = new Properties();
-        properties.put("hibernate.dialect", environment.getRequiredProperty("hibernate.dialect"));
-        properties.put("hibernate.show_sql", environment.getRequiredProperty("hibernate.show_sql"));
-        properties.put("hibernate.format_sql", environment.getRequiredProperty("hibernate.format_sql"));
-        return properties;
-    }
+/*
+    @Value("${hibernate.dialect}")
+    private String hibernateDialect;
+    @Value("${hibernate.show_sql}")
+    private String hibernateShowSql;
+    @Value("${hibernate.hbm2ddl.auto}")
+    private String hibernateHbm2ddlAuto;*/
 
     @Bean
-    public LocalSessionFactoryBean sessionFactory() {
-        System.out.println("SF");
+    public Properties getHibernateProperties()throws URISyntaxException{
+        Properties properties = new Properties();
+        properties.put("hibernate.dialect", getAppProperties().getDialect());
+        properties.put("{hibernate.show_sql}", getAppProperties().getShowSql());
+        properties.put("${hibernate.hbm2ddl.auto}", getAppProperties().getHibernateHbm2Dll());
+        return properties;
+    }
+    @Bean
+    public LocalSessionFactoryBean sessionFactory()throws URISyntaxException {
         final LocalSessionFactoryBean sessionFactory = new LocalSessionFactoryBean();
         sessionFactory.setDataSource(dataSource());
         sessionFactory.setPackagesToScan(new String[] { "todolist.model" });
 
-        sessionFactory.setHibernateProperties(hibernateProperties());
+        sessionFactory.setHibernateProperties(getHibernateProperties());
         return sessionFactory;
     }
 
     @Bean
     @Autowired
     public HibernateTransactionManager transactionManager(SessionFactory sessionFactory) {
-        System.out.println("TM");
         HibernateTransactionManager transactionManager = new HibernateTransactionManager();
         transactionManager.setSessionFactory(sessionFactory);
         return transactionManager;
     }
 
     @Bean
-    public DataSource dataSource() {
-        System.out.println("DS");
-        DriverManagerDataSource dataSource = new DriverManagerDataSource(dataBaseUrl, dataBaseUser, dataBasePass);
-        dataSource.setDriverClassName("com.mysql.jdbc.Driver");
+    public DataSource dataSource() throws URISyntaxException {
+        DriverManagerDataSource dataSource = new DriverManagerDataSource(getAppProperties().getUrl(),
+                                                                         getAppProperties().getUserName(),
+                                                                         getAppProperties().getUserPassword());
+        dataSource.setDriverClassName(getAppProperties().getDriver());
         return dataSource;
+    }
+
+    @Bean
+    public AppProperties getAppProperties() throws URISyntaxException{
+        return new AppProperties(System.getenv("DATABASE_URL"));
+
     }
 }

@@ -16,35 +16,90 @@ h2{
     color: #1a6384;
     font-size: 16px;
 }
+h3{
+    horiz-align: center;
+    vertical-align: center;
+    color: #bc3425;
+    font-size: 16px;
+}
+h4{
+    horiz-align: center;
+    vertical-align: center;
+    color: #25bc50;
+    font-size: 16px;
+}
 
 tr,td,th{
     width: 30%;
     border: transparent;
-
+    vertical-align: center;
+    horiz-align: center;
 }
 table{
-
+    width: 30%;
     border-bottom-color: #1a6384;
     border-left-color: #1a6384;
     border-right-color:  #1a6384;
 }
 
-.headerLists{
+.header{
     background-color: #1a6384;
+    border: 0px transparent;
 }
-.deleteButton {
+/*.deleteButton {
     background-color:transparent;
     color: #512b2b;
-    border-color: transparent;
+    border-color: #512b2b;
     border-radius: 4px;
     font-weight: bold;
-    font-size: 20px;
+    font-size: 12px;
+}*/
+.markTaskButton {
+    background-color:transparent;
+    color: #21a838;
+    border-color: #21a838;
+    border-radius: 4px;
+    font-weight: bold;
+    font-size: 12px;
 }
-.newListButton {
+
+.buttonForCompletedTask{
+    background-color:transparent;
+    color: grey;
+    border-color: grey;
+    border-radius: 4px;
+    font-weight: bold;
+    font-size: 12px;
+}
+.deleteTaskButton {
+    background-color:transparent;
+    color: #db1313;
+    border-color: #db1313;
+    border-radius: 4px;
+    font-weight: bold;
+    font-size: 12px;
+}
+.editButton {
+    background-color:transparent;
+    color: #dbc713;
+    border-color: #dbc713;
+    border-radius: 4px;
+    font-weight: bold;
+    font-size: 12px;
+}
+.newButton {
     background-color:transparent;
     color: white;
     border-color:transparent;
     border-radius: 4px;
     font-weight: bold;
-    font-size: 24px;
+    font-size: 30px;
+}
+.backButton {
+    background-color:transparent;
+    color: white;
+    border-color:transparent;
+    border-radius: 4px;
+    font-weight: bold;
+    font-size: 30px;
 }

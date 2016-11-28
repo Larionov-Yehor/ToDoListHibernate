@@ -7,6 +7,20 @@
           <element id="module-output" name="TasksHibernateConsole" />
         </element>
         <element id="directory" name="lib">
+          <element id="library" level="project" name="Maven: org.apache.tomcat.embed:tomcat-embed-core:8.0.28" />
+          <element id="library" level="project" name="Maven: org.apache.tomcat.embed:tomcat-embed-logging-juli:8.0.28" />
+          <element id="library" level="project" name="Maven: org.apache.tomcat.embed:tomcat-embed-jasper:8.0.28" />
+          <element id="library" level="project" name="Maven: org.apache.tomcat.embed:tomcat-embed-el:8.0.28" />
+          <element id="library" level="project" name="Maven: org.eclipse.jdt.core.compiler:ecj:4.4.2" />
+          <element id="library" level="project" name="Maven: org.apache.tomcat:tomcat-jasper:8.0.28" />
+          <element id="library" level="project" name="Maven: org.apache.tomcat:tomcat-servlet-api:8.0.28" />
+          <element id="library" level="project" name="Maven: org.apache.tomcat:tomcat-juli:8.0.28" />
+          <element id="library" level="project" name="Maven: org.apache.tomcat:tomcat-el-api:8.0.28" />
+          <element id="library" level="project" name="Maven: org.apache.tomcat:tomcat-api:8.0.28" />
+          <element id="library" level="project" name="Maven: org.apache.tomcat:tomcat-util-scan:8.0.28" />
+          <element id="library" level="project" name="Maven: org.apache.tomcat:tomcat-util:8.0.28" />
+          <element id="library" level="project" name="Maven: org.apache.tomcat:tomcat-jasper-el:8.0.28" />
+          <element id="library" level="project" name="Maven: org.apache.tomcat:tomcat-jsp-api:8.0.28" />
           <element id="library" level="project" name="Maven: org.springframework:spring-webmvc:4.3.4.RELEASE" />
           <element id="library" level="project" name="Maven: org.springframework:spring-aop:4.3.4.RELEASE" />
           <element id="library" level="project" name="Maven: org.springframework:spring-beans:4.3.4.RELEASE" />
@@ -37,6 +51,7 @@
           <element id="library" level="project" name="Maven: javax.annotation:jsr250-api:1.0" />
           <element id="library" level="project" name="Maven: javax.inject:javax.inject:1" />
           <element id="library" level="project" name="Maven: javassist:javassist:3.12.1.GA" />
+          <element id="library" level="project" name="Maven: postgresql:postgresql:9.1-901-1.jdbc4" />
         </element>
       </element>
       <element id="directory" name="META-INF">
