@@ -5,49 +5,94 @@
 </head>
     <body>
 
-    <a href="/home"> <input type="submit" value="back"> </a>
+    <table>
+             <tr>
+                <td>
+                    <a href="/home"> <input type="submit" value="back"> </a>
+                </td>
+                <td>
+                 ${taskList.getName()}
+                </td>
+                <td>
+                     <form action="/new_task" method="post">
+                        <button type="submit" name="listId" onclick="window.location='/new_task'" value="${taskList.getId()}">+</button>
+                     </form>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Have to do:
+                </td>
+                <td>
+                </td>
+                <td>
+                </td>
+            </tr>
 
-    <br>
+        <c:forEach items="${undone}" var="item">
+            <tr>
+                <td>
+                        ${item.getDueDate()}
+                </td>
+                <td>
+                        <label style="color: brown"> ${item.getName()} </label>
+                </td>
+                <td>
+                    <a href="/taskMarker?taskId=${item.getId()}"> <input type="submit" value="mark as done"> </a>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    ${item.getDescription()}
+                </td>
+                <td>
+                    <a href="/edit_task?taskId=${item.getId()}"> <input type="submit" value="edit"> </a>
+                </td>
+                <form action="/taskDelete" method="post">
+                    <td>
+                        <button class="deleteButton" type="submit" name="taskId" value="${item.getId()}">-</button>
+                    </td>
+                </form>
+            </tr>
+        </c:forEach>
+        <tr>
+            <td>
+                <br>
+                Completed:
+            </td>
+            <td>
+            </td>
+            <td>
+            </td>
+        </tr>
+        <c:forEach items="${done}" var="item">
+            <tr>
+                <td>
+                    <label style="color: greenyellow"> ${item.getName()} </label>
+                </td>
+                <td>
+                    <a href="/taskMarker?taskId=${item.getId()}"> <input type="submit" value="mark as done"> </a>
+                </td>
+                <td>
+                        ${item.getDueDate()}
+                </td>
+            </tr>
+            <tr>
+                <td>
+                        ${item.getDescription()}
+                </td>
+                <td>
+                    <a href="/edit_task?taskId=${item.getId()}"> <input type="submit" value="edit"> </a>
+                </td>
+                <form action="/taskDelete" method="post">
+                    <td>
+                        <button class="deleteButton" type="submit" name="taskId" value="${item.getId()}">-</button>
+                    </td>
+                </form>
+            </tr>
+        </c:forEach>
 
-    Tasklist: &nbsp ${taskList.getName()}
-    <br>
-
-    <form action="/new_task" method="post">
-        <button type="submit" name="listId" onclick="window.location='/new_task'" value="${taskList.getId()}">+</button>
-    </form>
-    <br>
-        Tasks to do:
-    <br>
-    <c:forEach items="${undone}" var="item">
-
-        &nbsp
-        <label style="color: brown"> ${item.getName()} </label> &nbsp ${item.getDueDate()}
-
-        <a href="/taskDelete?taskId=${item.getId()}"> <input type="submit" value="remove"> </a> &nbsp
-        <a href="/taskMarker?taskId=${item.getId()}"> <input type="submit" value="mark as done"> </a>
-        <a href="/edit_task?taskId=${item.getId()}"> <input type="submit" value="edit"> </a>
-        <br>
-        &nbsp ${item.getDescription()}
-        <br>
-
-    </c:forEach>
-
-    <br>
-    <br>
-        Completed tasks:
-    <br>
-    <c:forEach items="${done}" var="item">
-
-        &nbsp <label style="color: green"> ${item.getName()} </label> &nbsp ${item.getDueDate()}
-
-        <a href="/taskDelete?taskId=${item.getId()}"> <input type="submit" value="remove"> </a> &nbsp
-        <a href="/taskMarker?taskId=${item.getId()}"> <input type="submit" value="mark as done"> </a>
-        <br>
-        &nbsp ${item.getDescription()}
-        <br>
-        <br>
-
-    </c:forEach>
+    </table>
 
 
     </body>
