@@ -7,13 +7,12 @@
 </head>
 
 <body>
-<table>
+<table  border="0" cellspacing="0" cellpadding="0">
 
     <tr class="header"  align="middle" valign="middle">
-        <td colspan="2" class="taskListHeader"  align="middle" valign="middle">
-           Tasklists:
+        <td colspan="2"  align="middle" valign="middle">
+            <label class="taskListHeader"> Tasklists</label>
         </td>
-
         <td>
             <button class="newButton" type="submit" onclick="window.location='/new_tasklist'">+</button>
         </td>
@@ -22,17 +21,17 @@
     <c:forEach items="${taskLists}" var="item">
         <tr>
             <td>
-                <a href="/tasklist_page?taskListId=${item.getId()}"><h2> ${item.getName()}</h2></a>
+                <a href="/tasklist_page?taskListId=${item.getId()}">
+                    <label class="taskListName"> ${item.getName()}</label></a>
             </td>
+
             <td>
             </td>
-
             <form action="/deleteList" method="post">
-                <td>
-                    <button class="deleteButton" type="submit" name="listId" value="${item.getId()}">delete</button>
+                <td align="center">
+                <button class="deleteListButton" type="submit" name="listId" value="${item.getId()}">-</button>
                 </td>
             </form>
-
         </tr>
     </c:forEach>
     <tr>

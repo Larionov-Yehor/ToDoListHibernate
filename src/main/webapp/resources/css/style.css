@@ -5,28 +5,47 @@ a:link{
 .taskListHeader{
     horiz-align: center;
     vertical-align: center;
-    color: white;
-    font-size: 20px;
+    color:white;
+    font-size: 22px;
     font-weight: normal;
+    border: 0px transparent;
 }
-h2{
+.header{
+    background-color: #2172ce;
+    border: 0px transparent;
+}
+
+.newButton {
+    background-color:transparent;
+    color:white;
+    border-color:transparent;
+    font-weight: bold;
+    font-size: 30px;
+}
+.backButton {
+    background-color:transparent;
+    color: white;
+    border-color:transparent;
+    font-weight: bold;
+    font-size: 30px;
+}
+
+.taskListName{
+     horiz-align: center;
+     vertical-align: center;
+     color: 3a3a3a;
+     font-size: 18px;
+}
+.deleteListButton {
+    background-color:transparent;
+    color:black;
+    border-color:transparent;
+    font-weight: bold;
+    font-size: 22px;
     horiz-align: center;
-    vertical-align: center;
-    color: #1a6384;
-    font-size: 16px;
+
 }
-h3{
-    horiz-align: center;
-    vertical-align: center;
-    color: #bc3425;
-    font-size: 16px;
-}
-h4{
-    horiz-align: center;
-    vertical-align: center;
-    color: #25bc50;
-    font-size: 16px;
-}
+
 .taskName{
     horiz-align: center;
     vertical-align: center;
@@ -42,31 +61,11 @@ h4{
     font-size: 16px;
 }
 
-tr,td,th{
-    width: 30%;
-    border: transparent;
-    vertical-align: center;
-    horiz-align: center;
-}
+
 table{
     width: 30%;
-    border-bottom-color: #1a6384;
-    border-left-color: #1a6384;
-    border-right-color:  #1a6384;
 }
 
-.header{
-    background-color: #1a6384;
-    border: 0px transparent;
-}
-/*.deleteButton {
-    background-color:transparent;
-    color: #512b2b;
-    border-color: #512b2b;
-    border-radius: 4px;
-    font-weight: bold;
-    font-size: 12px;
-}*/
 .markTaskButton {
     background-color:transparent;
     color: #21a838;
@@ -76,14 +75,6 @@ table{
     font-size: 12px;
 }
 
-.buttonForCompletedTask{
-    background-color:transparent;
-    color: grey;
-    border-color: grey;
-    border-radius: 4px;
-    font-weight: bold;
-    font-size: 12px;
-}
 .deleteTaskButton {
     background-color:transparent;
     color: #db1313;
@@ -100,19 +91,11 @@ table{
     font-weight: bold;
     font-size: 12px;
 }
-.newButton {
+.buttonForCompletedTask{
     background-color:transparent;
-    color: white;
-    border-color:transparent;
+    color: grey;
+    border-color: grey;
     border-radius: 4px;
     font-weight: bold;
-    font-size: 30px;
-}
-.backButton {
-    background-color:transparent;
-    color: white;
-    border-color:transparent;
-    border-radius: 4px;
-    font-weight: bold;
-    font-size: 30px;
+    font-size: 12px;
 }

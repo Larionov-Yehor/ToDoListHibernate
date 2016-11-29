@@ -1,7 +1,12 @@
 package todolist.model;
 
+import org.hibernate.annotations.*;
+import org.hibernate.annotations.CascadeType;
 import javax.persistence.*;
+import javax.persistence.Entity;
+import javax.persistence.Table;
 import java.util.List;
+
 
 /**
  * Created by employee on 11/18/16.
@@ -19,7 +24,11 @@ public class TaskList {
     private String name;
 
     @OneToMany(fetch = FetchType.LAZY, mappedBy = "listOfTasks")
+    @Cascade(CascadeType.DELETE)
     private List<Task> coupledTasks;
+
+    @OneToMany(fetch = FetchType.LAZY, mappedBy = "listTasks")
+
 
     public Integer getId() {
         return id;

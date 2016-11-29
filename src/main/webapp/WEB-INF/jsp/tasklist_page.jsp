@@ -5,17 +5,17 @@
 </head>
 <body>
 
-<table>
-    <tr class="header">
-        <td align="middle" valign="middle">
+<table  border="0" cellspacing="0" cellpadding="0">
+    <tr class="header" align="middle" valign="middle">
+        <td>
             <form action="/home" method="get">
                 <button class="backButton" type="submit"><</button>
             </form>
         </td>
-        <td class="taskListHeader" align="middle" valign="middle">
-           ${taskList.getName()}
+        <td>
+            <label class="taskListHeader">${taskList.getName()}</label>
         </td>
-        <td  align="middle" valign="middle">
+        <td>
             <form action="/new_task" method="post">
                 <button class="newButton" type="submit" name="listId" onclick="window.location='/new_task'" value="${taskList.getId()}">+</button>
             </form>

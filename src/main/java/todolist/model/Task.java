@@ -21,7 +21,6 @@ public class Task{
     @JoinColumn(name = "list_id", insertable = false, updatable = false )
     private TaskList listOfTasks;
 
-
     @Column(name = "task_name")
     private String name;
 
