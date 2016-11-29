@@ -26,18 +26,6 @@ import java.util.Properties;
 
 public class HibernateConfiguration {
 
-   /* @Value("${db.driverClassName}")
-    String driver;
-
-    @Value("${db.url}")
-    String dataBaseUrl;
-
-    @Value("${db.username}")
-    String dataBaseUser;
-
-    @Value("${db.password}")
-    String dataBasePass;*/
-
     @Autowired
     private Environment environment;
 
@@ -45,14 +33,6 @@ public class HibernateConfiguration {
     public static PropertySourcesPlaceholderConfigurer propertySourcesPlaceholderConfigurer() {
         return new PropertySourcesPlaceholderConfigurer();
     }
-
-/*
-    @Value("${hibernate.dialect}")
-    private String hibernateDialect;
-    @Value("${hibernate.show_sql}")
-    private String hibernateShowSql;
-    @Value("${hibernate.hbm2ddl.auto}")
-    private String hibernateHbm2ddlAuto;*/
 
     @Bean
     public Properties getHibernateProperties()throws URISyntaxException{

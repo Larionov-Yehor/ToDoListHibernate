@@ -1,9 +1,8 @@
-
 a:link{
     text-decoration: none;
 }
 
-h1{
+.taskListHeader{
     horiz-align: center;
     vertical-align: center;
     color: white;
@@ -26,6 +25,20 @@ h4{
     horiz-align: center;
     vertical-align: center;
     color: #25bc50;
+    font-size: 16px;
+}
+.taskName{
+    horiz-align: center;
+    vertical-align: center;
+    color: black;
+    font-weight: bold;
+    font-size: 16px;
+}
+.completedTaskName{
+    horiz-align: center;
+    vertical-align: center;
+    color: gray;
+    font-weight: bold;
     font-size: 16px;
 }
 
