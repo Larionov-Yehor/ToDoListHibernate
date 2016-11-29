@@ -30,7 +30,6 @@ public class ListsController {
 
     @RequestMapping(value = "/")
     public String index() {
-
         return "redirect:/home";
     }
 
