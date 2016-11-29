@@ -5,7 +5,7 @@
 <body>
 <a href="/home"> <input type="submit" value="back"> </a>
 
-<form action="/add_new_tasklist" method="post">
+<form action="/taskList" method="post">
 
     <input type="text" name="tasklist_name" placeholder="enter name" required>
     <br>

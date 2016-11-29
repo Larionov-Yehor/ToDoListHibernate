@@ -22,16 +22,19 @@
         <tr>
             <td>
                 <a href="/tasklist_page?taskListId=${item.getId()}">
-                    <label class="taskListName"> ${item.getName()}</label></a>
+                <label class="taskListName"> ${item.getName()}</label></a>
             </td>
 
             <td>
             </td>
-            <form action="/deleteList" method="post">
-                <td align="center">
-                <button class="deleteListButton" type="submit" name="listId" value="${item.getId()}">-</button>
-                </td>
+            <td align="center">
+
+            <form action="/taskList/" method="post">
+            <input type="hidden" name="listId" value="${taskList.getId()}">
+            <input type="submit" value="-">
             </form>
+
+            </td>
         </tr>
     </c:forEach>
     <tr>
