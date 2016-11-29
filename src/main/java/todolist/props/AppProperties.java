@@ -19,10 +19,7 @@ public class AppProperties {
 
 
     public AppProperties(String uriStr) throws URISyntaxException {
-/*
-         uriStr =   "postgres://rlryzssqsgphxu:zClFRzXhV6N9L5EL3ceIWVpaqj" +
-                    "@ec2-54-228-219-20." +
-                    "eu-west-1.compute.amazonaws.com:5432/d5aonnl15dtqub";*/
+
     uri = new URI(uriStr);
     String userInfo[] = uri.getUserInfo().split(":");
         userName = userInfo[0];
