@@ -19,7 +19,7 @@ public class ListController {
     @Autowired
     ListsService listsService;
 
-    @RequestMapping(method = RequestMethod.GET)
+ /*   @RequestMapping(method = RequestMethod.GET)
     String allTaskLists(ModelMap modelMap){
     modelMap.addAttribute("taskLists", listsService.getAll());
     return "home";
@@ -38,7 +38,6 @@ public class ListController {
     listsService.delete(listId);
     return "redirect:/home";
     }
-
-
+*/
 
 }

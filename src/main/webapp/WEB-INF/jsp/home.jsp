@@ -4,6 +4,9 @@
 
 <head>
     <link rel="stylesheet" href="/resources/css/style.css">
+<%--    <script src="/resources/js/lib/jquery-2.1.0.min.js"></script>--%>
+ <%--   <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/2.1.0/jquery.min.js"></script>
+    <script src="/webapp/resources/js/main.js"></script>--%>
 </head>
 
 <body>
@@ -27,14 +30,11 @@
 
             <td>
             </td>
+            <form action="/deleteList" method="post">
             <td align="center">
-
-            <form action="/taskList/" method="post">
-            <input type="hidden" name="listId" value="${taskList.getId()}">
-            <input type="submit" value="-">
-            </form>
-
+             <button class="deleteListButton" type="submit" name="listId" value="${item.getId()}">-</button>
             </td>
+            </form>
         </tr>
     </c:forEach>
     <tr>
