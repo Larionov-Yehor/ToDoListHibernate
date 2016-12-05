@@ -23,11 +23,11 @@ public class TaskList {
     @Column(name = "tasklist_name")
     private String name;
 
-    @OneToMany(fetch = FetchType.LAZY, mappedBy = "listOfTasks")
+    @OneToMany(fetch = FetchType.LAZY)
     @Cascade(CascadeType.DELETE)
     private List<Task> coupledTasks;
 
-    @OneToMany(fetch = FetchType.LAZY, mappedBy = "listTasks")
+
 
 
     public Integer getId() {

@@ -17,7 +17,7 @@ public class Initializer implements WebApplicationInitializer {
     public void onStartup(ServletContext servletContext) throws ServletException {
 
         AnnotationConfigWebApplicationContext context = new AnnotationConfigWebApplicationContext();
-        context.register(todolist.config.AppContextConfig.class);
+        context.register(todolist.config.AppConfig.class);
         servletContext.addListener(new ContextLoaderListener(context));
 
         context.setServletContext(servletContext);

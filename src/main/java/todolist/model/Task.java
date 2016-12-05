@@ -15,10 +15,12 @@ public class Task{
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "task_id")
     private Integer id;
+/*
 
     @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "list_id", insertable = false, updatable = false )
     private TaskList listOfTasks;
+*/
 
     @Column(name = "task_name")
     private String name;

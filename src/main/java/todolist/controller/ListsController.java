@@ -5,13 +5,11 @@ package todolist.controller;
  */
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.*;
 import todolist.model.Task;
 import todolist.model.TaskList;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
 import todolist.service.ListsService;
 import todolist.service.ListsServiceImpl;
 import todolist.service.TasksService;
@@ -37,11 +35,22 @@ public class ListsController {
     @RequestMapping(value = "/home", method = RequestMethod.GET)
     public ModelMap getAll() {
         List<TaskList> taskLists = listsService.getAll();
+        taskLists.forEach(t -> System.out.println(t.getId()));
         ModelMap modelMap = new ModelMap();
         modelMap.addAttribute("taskLists", taskLists);
 
         return modelMap;
     }
+
+   /* @RequestMapping(value="/home", method = RequestMethod.GET)
+    public @ResponseBody List<TaskList> getAll() {
+
+        List<TaskList> taskLists = listsService.getAll();
+
+
+        return taskLists;
+
+    }*/
 
 
     @RequestMapping(value = "/tasklist_page")
